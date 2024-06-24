@@ -5,38 +5,38 @@ export default {
         ecmaVersion: 'latest',
         sourceType: 'module',
         globals: {
-            ...globals.browser
-        }
+            ...globals.browser,
+        },
     },
     files: [
         'src/**/*.js',
-        'test/**/*.js'
+        'test/**/*.js',
     ],
     rules: {
         'array-bracket-newline': 'off',
         'array-bracket-spacing': [
             'error',
-            'never'
+            'never',
         ],
         'array-element-newline': 'off',
         'arrow-parens': [
             'error',
-            'always'
+            'always',
         ],
         'block-spacing': [
             'error',
-            'never'
+            'never',
         ],
         'brace-style': 'error',
         'camelcase': [
             'error',
             {
-                properties: 'never'
-            }
+                properties: 'never',
+            },
         ],
         'comma-dangle': [
             'error',
-            'always-multiline'
+            'always-multiline',
         ],
         'comma-spacing': 'error',
         'comma-style': 'error',
@@ -44,7 +44,7 @@ export default {
         'constructor-super': 'error',
         'curly': [
             'error',
-            'multi-line'
+            'multi-line',
         ],
         'eol-last': 'error',
         'func-call-spacing': 'error',
@@ -54,8 +54,8 @@ export default {
             4,
             {
                 MemberExpression: 'off',
-                SwitchCase: 1
-            }
+                SwitchCase: 1,
+            },
         ],
         'key-spacing': 'error',
         'keyword-spacing': 'error',
@@ -75,8 +75,8 @@ export default {
         'no-multiple-empty-lines': [
             'error',
             {
-                max: 2
-            }
+                max: 2,
+            },
         ],
         'no-new-object': 'error',
         'no-new-symbol': 'error',
@@ -90,14 +90,14 @@ export default {
             'error',
             {
                 argsIgnorePattern: '_',
-                varsIgnorePattern: '_'
-            }
+                varsIgnorePattern: '_',
+            },
         ],
         'no-var': 'error',
         'no-with': 'error',
         'object-curly-spacing': [
             'error',
-            'always'
+            'always',
         ],
         'one-var': [
             'error',
@@ -105,35 +105,35 @@ export default {
                 var: 'never',
                 let: 'never',
                 const: 'never',
-            }
+            },
         ],
         'operator-linebreak': [
             'error',
-            'after'
+            'after',
         ],
         'padded-blocks': [
             'error',
-            'never'
+            'never',
         ],
         'prefer-const': [
             'error',
             {
-                destructuring: 'all'
-            }
+                destructuring: 'all',
+            },
         ],
         'prefer-promise-reject-errors': 'error',
         'prefer-rest-params': 'error',
         'prefer-spread': 'error',
         'quote-props': [
             'error',
-            'consistent'
+            'consistent',
         ],
         'quotes': [
             'error',
             'single',
             {
-                allowTemplateLiterals: true
-            }
+                allowTemplateLiterals: true,
+            },
         ],
         'rest-spread-spacing': 'error',
         'semi': 'error',
@@ -145,16 +145,16 @@ export default {
                 asyncArrow: 'always',
                 anonymous: 'never',
                 named: 'never',
-            }
+            },
         ],
         'spaced-comment': [
             'error',
-            'always'
+            'always',
         ],
         'switch-colon-spacing': 'error',
         'yield-star-spacing': [
             'error',
-            'after'
-        ]
-    }
+            'after',
+        ],
+    },
 };
