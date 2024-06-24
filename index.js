@@ -9,6 +9,7 @@ export default {
         },
     },
     files: [
+        '*.js',
         'src/**/*.js',
         'test/**/*.js',
     ],
