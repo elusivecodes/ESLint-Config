@@ -31,7 +31,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/elusivecodes/ESLint-Config.git"
+        "url": "git+https://github.com/elusivecodes/ESLint-Config.git"
     },
     "author": "Elusive <elusivecodes@gmail.com>",
     "license": "MIT",
@@ -41,7 +41,8 @@
     },
     "dependencies": {
         "@stylistic/eslint-plugin": "^5.10.0",
-        "globals": "^17.4.0"
+        "globals": "^17.4.0",
+        "user": "^0.0.0"
     },
     "peerDependencies": {
         "eslint": "^10.0.0"
