@@ -36,6 +36,9 @@
     "author": "Elusive <elusivecodes@gmail.com>",
     "license": "MIT",
     "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
     "engines": {
         "node": ">=20.19.0"
     },
