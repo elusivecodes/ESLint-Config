@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/%40fr0st%2Feslint-config)](https://www.npmjs.com/package/@fr0st/eslint-config)
 [![license](https://img.shields.io/npm/l/%40fr0st%2Feslint-config)](https://github.com/elusivecodes/ESLint-Config/blob/main/LICENSE)
 
-ESLint shareable config for the Frost style.
+ESLint shareable config for the *Frost* style.
 
 ## Installation
 
