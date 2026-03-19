@@ -18,8 +18,8 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 20.19.0
-          - 22.13.0
+          - 20
+          - 22
           - 24
 
     steps:
