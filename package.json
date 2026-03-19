@@ -1,6 +1,6 @@
 {
     "name": "@fr0st/eslint-config",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "ESLint shareable config for the Frost style.",
     "keywords": [
         "code",
@@ -47,7 +47,7 @@
         "eslint": "^10.0.0"
     },
     "engines": {
-        "node": ">=24"
+        "node": "^20.19.0 || ^22.13.0 || >=24"
     },
     "publishConfig": {
         "access": "public"
