@@ -25,7 +25,7 @@ describe('environment configs', () => {
             browserConfig,
         ]);
 
-        assert.deepEqual(messages, []);
+        assert.deepStrictEqual(messages, []);
     });
 
     it('nodeConfig exposes node globals', async () => {
@@ -34,7 +34,7 @@ describe('environment configs', () => {
             nodeConfig,
         ]);
 
-        assert.deepEqual(messages, []);
+        assert.deepStrictEqual(messages, []);
     });
 });
 
@@ -47,7 +47,7 @@ describe('base rules', () => {
             frostConfig,
         ]);
 
-        assert.equal(allowedMessages.some((message) => message.ruleId === 'no-unused-vars'), false);
-        assert.equal(disallowedMessages.some((message) => message.ruleId === 'no-unused-vars'), true);
+        assert.strictEqual(allowedMessages.some((message) => message.ruleId === 'no-unused-vars'), false);
+        assert.strictEqual(disallowedMessages.some((message) => message.ruleId === 'no-unused-vars'), true);
     });
 });
