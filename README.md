@@ -53,5 +53,5 @@ export default [
 
 ## Compatibility
 
-- Node `>=20.19.0`
+- Node `>=24`
 - ESLint `^10.0.0`
