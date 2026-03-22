@@ -1,4 +1,5 @@
 import stylistic from '@stylistic/eslint-plugin';
+import perfectionist from 'eslint-plugin-perfectionist';
 import globals from 'globals';
 
 const rules = {
@@ -134,6 +135,63 @@ const rules = {
             var: 'never',
         },
     ],
+    'perfectionist/sort-classes': [
+        'error',
+        {
+            groups: [
+                [
+                    'static-property',
+                    'static-accessor-property',
+                ],
+                [
+                    'static-get-method',
+                    'static-set-method',
+                    'static-method',
+                    'static-function-property',
+                ],
+                [
+                    'property',
+                    'accessor-property',
+                ],
+                'constructor',
+                [
+                    'get-method',
+                    'set-method',
+                    'method',
+                    'function-property',
+                ],
+                'unknown',
+            ],
+            type: 'natural',
+        },
+    ],
+    'perfectionist/sort-exports': [
+        'error',
+        {
+            order: 'asc',
+            type: 'natural',
+        },
+    ],
+    'perfectionist/sort-imports': [
+        'error',
+        {
+            groups: [
+                'builtin',
+                'external',
+                'internal',
+                [
+                    'parent',
+                    'sibling',
+                    'index',
+                ],
+                'style',
+            ],
+            newlinesBetween: 0,
+            order: 'asc',
+            sortSideEffects: false,
+            type: 'natural',
+        },
+    ],
     'prefer-const': [
         'error',
         {
@@ -148,6 +206,7 @@ const rules = {
 export const baseConfig = {
     name: '@fr0st/eslint-config/base',
     plugins: {
+        perfectionist,
         '@stylistic': stylistic,
     },
     languageOptions: {
