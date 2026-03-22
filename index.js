@@ -139,37 +139,72 @@ const rules = {
         'error',
         {
             groups: [
-                [
-                    'static-property',
-                    'static-accessor-property',
-                ],
+                {
+                    group: [
+                        'static-property',
+                        'static-accessor-property',
+                        'static-function-property',
+                    ],
+                    newlinesInside: 0,
+                },
+                {
+                    group: [
+                        'private-static-property',
+                        'private-static-accessor-property',
+                        'private-static-function-property',
+                    ],
+                    newlinesInside: 0,
+                },
+                {
+                    group: [
+                        'property',
+                        'accessor-property',
+                        'function-property',
+                    ],
+                    newlinesInside: 0,
+                },
+                {
+                    group: [
+                        'private-property',
+                        'private-accessor-property',
+                        'private-function-property',
+                    ],
+                    newlinesInside: 0,
+                },
                 [
                     'static-get-method',
                     'static-set-method',
-                    'static-method',
-                    'static-function-property',
                 ],
                 [
-                    'property',
-                    'accessor-property',
+                    'private-static-get-method',
+                    'private-static-set-method',
                 ],
+                'static-method',
+                'private-static-method',
                 'constructor',
                 [
                     'get-method',
                     'set-method',
-                    'method',
-                    'function-property',
                 ],
+                [
+                    'private-get-method',
+                    'private-set-method',
+                ],
+                'method',
+                'private-method',
                 'unknown',
             ],
             type: 'natural',
+            newlinesBetween: 1,
+            newlinesInside: 1,
         },
     ],
     'perfectionist/sort-exports': [
         'error',
         {
-            order: 'asc',
             type: 'natural',
+            order: 'asc',
+            newlinesBetween: 0,
         },
     ],
     'perfectionist/sort-imports': [
@@ -186,10 +221,10 @@ const rules = {
                 ],
                 'style',
             ],
-            newlinesBetween: 0,
+            type: 'natural',
             order: 'asc',
             sortSideEffects: false,
-            type: 'natural',
+            newlinesBetween: 0,
         },
     ],
     'prefer-const': [

@@ -102,12 +102,20 @@ export { alpha } from './alpha.js';
         assert.strictEqual(hasRule(disallowedMessages, 'perfectionist/sort-exports'), true);
     });
 
-    it('enforces class member order for static props, static methods, props, constructor, and methods', async () => {
+    it('enforces class member order and spacing for static props, props, static methods, constructor, and methods', async () => {
         const allowedMessages = await lintText(`class Example {
     static alpha = 1;
-    static beta() {}
+    static omega = 2;
+
     alpha = 1;
+    zeta = 2;
+
+    static beta() {}
+
     constructor() {}
+
+    alphaMethod() {}
+
     beta() {}
 }
 
@@ -116,11 +124,37 @@ void Example;
             frostConfig,
         ]);
         const disallowedMessages = await lintText(`class Example {
-    alpha = 1;
     static alpha = 1;
-    beta() {}
-    constructor() {}
+    static omega = 2;
+
     static beta() {}
+
+    alpha = 1;
+    zeta = 2;
+
+    constructor() {}
+
+    alphaMethod() {}
+    beta() {}
+}
+
+void Example;
+`, [
+            frostConfig,
+        ]);
+        const missingMethodSpacingMessages = await lintText(`class Example {
+    static alpha = 1;
+    static omega = 2;
+
+    alpha = 1;
+    zeta = 2;
+
+    static beta() {}
+
+    constructor() {}
+
+    alphaMethod() {}
+    beta() {}
 }
 
 void Example;
@@ -128,7 +162,66 @@ void Example;
             frostConfig,
         ]);
 
-        assert.strictEqual(hasRule(allowedMessages, 'perfectionist/sort-classes'), false);
+        assert.deepStrictEqual(allowedMessages, []);
+        assert.strictEqual(hasRule(disallowedMessages, 'perfectionist/sort-classes'), true);
+        assert.strictEqual(hasRule(missingMethodSpacingMessages, 'perfectionist/sort-classes'), true);
+    });
+
+    it('enforces class member order and spacing for private static and private instance members', async () => {
+        const allowedMessages = await lintText(`class Example {
+    static alpha = 1;
+    static zeta = 2;
+
+    static #gamma = 1;
+    static #theta = 2;
+
+    alpha = 1;
+    omega = 2;
+
+    #beta = 1;
+    #eta = 2;
+
+    static beta() {}
+
+    static #delta() {}
+
+    constructor() {}
+
+    gamma() {}
+
+    #epsilon() {}
+}
+
+void Example;
+`, [
+            frostConfig,
+        ]);
+        const disallowedMessages = await lintText(`class Example {
+    static alpha = 1;
+
+    static beta() {}
+
+    static #gamma = 1;
+
+    alpha = 1;
+
+    #beta = 1;
+
+    static #delta() {}
+
+    constructor() {}
+
+    gamma() {}
+
+    #epsilon() {}
+}
+
+void Example;
+`, [
+            frostConfig,
+        ]);
+
+        assert.deepStrictEqual(allowedMessages, []);
         assert.strictEqual(hasRule(disallowedMessages, 'perfectionist/sort-classes'), true);
     });
 });
